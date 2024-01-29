@@ -34,9 +34,7 @@ find_package(CUDA REQUIRED)
 
 # Create shared library
 cuda_add_library(${ProjectId} SHARED ${CPP_SOURCES} ${CUDA_SOURCES})
-
 target_include_directories(${ProjectId} PUBLIC include)
-
 
 # Install the library
 install(TARGETS ${ProjectId} DESTINATION lib)
