@@ -1,3 +1,7 @@
+// CHECKERROR_HPP
+#ifndef __CHECKERROR_HPP_21543
+#define __CHECKERROR_HPP_21543
+
 #include <cstdio>
 
 static const char *_getErrorEnum(cudaError_t error) {
@@ -14,7 +18,7 @@ void Check(T result, char const * const func, const char * const file, int const
 
 #define CheckErrors(val) Check((val), #val, __FILE__, __LINE__)
 
-void CheckKernelError() {
+inline void CheckKernelError() {
 
   // always check for synchronous errors from kernel launch
   CheckErrors(cudaGetLastError());
@@ -25,3 +29,5 @@ void CheckKernelError() {
   #endif
 
 }
+
+#endif // CHECKERROR_HPP_21543
