@@ -23,7 +23,7 @@ inline void CheckKernelError() {
   // always check for synchronous errors from kernel launch
   CheckErrors(cudaGetLastError());
   
-  // only wat to do cuda device synchronize when we're debugging DISABLE before release
+  // only do cuda device synchronize when we're debugging DISABLE before release
   #ifndef NDEBUG
     CheckErrors(cudaDeviceSynchronize());
   #endif
